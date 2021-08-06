@@ -1,0 +1,39 @@
+﻿@model HtmlHelpersApp.Models.UserRegistration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>Name: </p>
+            @Html.TextBoxFor(m => m.Name)
+            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+            <br />
+            <p>Email: </p>
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            <br />
+            <p>Age: </p>
+            @Html.TextBoxFor(m => m.Age)
+            @Html.ValidationMessageFor(m => m.Age, "", new { @class = "text-danger" })
+            <br />
+            <p>Salary: </p>
+            @Html.TextBoxFor(m => m.Salary)
+            @Html.ValidationMessageFor(m => m.Salary, "", new { @class = "text-danger" })
+            <br /><br />
+            <input type="submit" />
+        }
+    </div>
+</body>
+</html>
